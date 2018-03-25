@@ -8,7 +8,7 @@ import {IParty} from '../../interfaces/party.interface';
   styleUrls: ['./header.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input()
   appHeaderAppTitle: string;
 
@@ -22,9 +22,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(apiService: ApiService) {
     this.apiService = apiService;
-  }
-
-  ngOnInit() {
   }
 
   public setPartyId(party: IParty): void {
