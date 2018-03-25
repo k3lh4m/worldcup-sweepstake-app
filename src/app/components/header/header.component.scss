@@ -1,0 +1,59 @@
+@import "../../../styles";
+
+.appHeader {
+  &-container {
+    align-items: flex-start;
+    background-color: $color-fifa-blue;
+    color: $color-white;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  &-logoContainer {
+    font-size: 22px;
+    padding: 15px 0 15px 10px
+  }
+
+  &-logo {
+    font-size: inherit;
+  }
+
+  &-loginInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: stretch;
+    margin: 0 5px 0 0;
+  }
+
+  &-findParty {
+    display: flex;
+  }
+
+  &-findPartyField {
+    @include defaultInput();
+    padding: 7px 10px;
+    min-width: 100px;
+  }
+
+  &-findPartyButton {
+    @include defaultButton();
+    align-self: stretch;
+    background-color: $color-white;
+    color: $color-fifa-blue;
+    padding: 5px;
+  }
+
+  &-createNewPartyButton {
+    margin: 0 10px 0 0;
+  }
+
+  &-partyNumber {
+    display: flex;
+    align-items: center;
+    background-color: $color-white;
+    color: $color-fifa-blue;
+    padding: 5px 10px;
+  }
+}

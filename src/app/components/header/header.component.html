@@ -1,0 +1,28 @@
+<div class="appHeader-container">
+  <div class="appHeader-logoContainer">
+    <h1 class="appHeader-logo">{{ appHeaderAppTitle }}</h1>
+  </div>
+
+  <div class="appHeader-loginInfo">
+    <div class="appHeader-createNewPartyButton" *ngIf="!partyId">
+      <app-create-new-party
+        (appCreateNewPartyPartyId)="setPartyId($event)">
+      </app-create-new-party>
+    </div>
+
+    <div class="appHeader-findParty" *ngIf="!partyId">
+      <input
+        #searchParty
+        class="appHeader-findPartyField"
+        placeholder="Type your party id..."/>
+      <button class="appHeader-findPartyButton" (click)="findParty()">
+        <fa name="search"></fa>
+      </button>
+    </div>
+
+    <div class="appHeader-partyNumber" *ngIf="partyId">
+      <span>Party Id: {{ partyId }}</span>
+    </div>
+  </div>
+
+</div>

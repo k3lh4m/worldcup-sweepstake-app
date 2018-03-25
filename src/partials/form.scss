@@ -1,0 +1,8 @@
+@mixin defaultButton() {
+  border: none;
+  background-color: transparent;
+}
+
+@mixin defaultInput() {
+  border: 0;
+}
