@@ -1,7 +1,7 @@
-
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {IParty} from '../interfaces/party.interface';
 
 @Injectable()
 export class ApiService {
@@ -12,10 +12,10 @@ export class ApiService {
   }
 
   public createParty(url: string): Observable<any>  {
-    return this._http.get<any>(url);
+    return this._http.get<IParty>(url);
   }
 
   public findParty(url: string, partyId: number) {
-    return this._http.get(url + '?partyId=' + partyId);
+    return this._http.get<IParty>(url + '?partyId=' + partyId);
   }
 }
