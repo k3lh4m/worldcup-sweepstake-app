@@ -29,12 +29,16 @@ export class HeaderComponent {
   }
 
   public findParty(): void {
-    const findPartyId = this.input.nativeElement.value;
+    const findPartyId = this.getInputValue();
 
     this.apiService.findParty('/api/party', findPartyId)
       .subscribe((data: IParty) => {
         this.appHeaderPartyData.emit(data);
         this.partyId = data.partyId;
       });
+  }
+
+  private getInputValue() {
+    return this.input.nativeElement.value;
   }
 }

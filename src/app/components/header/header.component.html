@@ -12,13 +12,16 @@
 
     <div class="appHeader-findParty" *ngIf="!partyId">
       <div class="appHeader-findPartSearchFieldContainer">
-        <input
-          #searchParty
-          class="appHeader-findPartySearchField"
-          placeholder="Type your party id..."/>
-        <button class="appHeader-findPartyButton" (click)="findParty()">
-          <fa name="search"></fa>
-        </button>
+        <form
+          (submit)="findParty();">
+          <input
+            #searchParty
+            class="appHeader-findPartySearchField"
+            placeholder="Type your party id..."/>
+          <button class="appHeader-findPartyButton" (click)="findParty()">
+            <fa name="search"></fa>
+          </button>
+        </form>
       </div>
     </div>
 
