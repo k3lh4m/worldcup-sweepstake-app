@@ -1,0 +1,8 @@
+@mixin sectionDefaultStyles() {
+  border: 1px
+}
+
+@mixin setBorderAndBackgroundColor($color) {
+  background-color: $color;
+  border-color: $color;
+}

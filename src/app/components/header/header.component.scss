@@ -3,7 +3,7 @@
 .appHeader {
   &-container {
     align-items: flex-start;
-    background-color: $color-fifa-blue;
+    background-color: $color-raisin-black;
     color: $color-white;
     display: flex;
     height: 100%;
@@ -11,12 +11,19 @@
   }
 
   &-logoContainer {
+    color: $color-white;
     font-size: 22px;
+    font-weight: $font-weight-black;
+    font-style: $font-style-italic;
     padding: 15px 0 15px 10px
   }
 
   &-logo {
+    text-transform: uppercase;
     font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    color: inherit;
   }
 
   &-loginInfo {
@@ -28,21 +35,29 @@
   }
 
   &-findParty {
-    display: flex;
+    display: flex
   }
 
-  &-findPartyField {
-    @include defaultInput();
-    padding: 7px 10px;
-    min-width: 100px;
+  &-findPartSearchFieldContainer {
+    @include defaultInputConatiner {
+      padding: 6px 20px;
+    };
+  }
+
+  &-findPartySearchField {
+    @include defaultInput {
+      color: $color-white;
+    };
+
+    @include placeholder {
+      color: $color-white;
+    }
   }
 
   &-findPartyButton {
-    @include defaultButton();
-    align-self: stretch;
-    background-color: $color-white;
-    color: $color-fifa-blue;
-    padding: 5px;
+    @include defaultInputConatinerIcon {
+      padding-left: 10px;
+    }
   }
 
   &-createNewPartyButton {
@@ -50,10 +65,10 @@
   }
 
   &-partyNumber {
-    display: flex;
-    align-items: center;
-    background-color: $color-white;
-    color: $color-fifa-blue;
-    padding: 5px 10px;
+    @include defaultButton {
+      background-color: $color-jet-black;
+      border: $color-jet-black;
+      @include setBorderAndBackgroundColor($color-jet-black);
+    }
   }
 }
