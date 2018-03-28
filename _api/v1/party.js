@@ -4,7 +4,9 @@ const router = express.Router();
 const startUpDebugger = require('debug')('app:startup');
 
 const dbConnect = mongoose.connect('mongodb://localhost/worldcup-sweepstaker');
-dbConnect.then(() => { startUpDebugger('Connected to worldcup staker...') });
+dbConnect.then(() => {
+  startUpDebugger('Connected to worldcup staker...')
+});
 
 const partySchema = new mongoose.Schema({
   partyId: {
@@ -26,7 +28,7 @@ const partySchema = new mongoose.Schema({
 const Party = mongoose.model('Party', partySchema);
 
 function generatePartyCode() {
-  return Math.floor(Math.random()*90000) + 10000;
+  return Math.floor(Math.random() * 90000) + 10000;
 }
 
 function createNewParty(partyId) {
@@ -58,9 +60,15 @@ router.get('/party', (req, res) => {
     partyId: _id
   });
 
-  result.then((data) => {
-    res.send(data);
-  })
+  result
+    .then((party) => {
+      if(!party) {
+        res.send(404, { error: 'No party with this ID has been found' })
+      }
+
+      res.send(party);
+    })
 });
+
 
 module.exports = router;
