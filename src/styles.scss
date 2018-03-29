@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+//Mixins
+@import "partials/mixins/form-mixins";
+@import "partials/mixins/misc-mixins";
+
+//Partials
 @import "partials/reset";
 @import "partials/colors";
 @import "partials/fonts";
@@ -6,4 +12,11 @@
 
 body {
   font-family: $body-font;
+  background-color: $color-platinum-grey;
 }
+
+h3 {
+  font-size: 20px;
+}
+
+
