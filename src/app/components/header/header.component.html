@@ -13,12 +13,12 @@
     <div class="appHeader-findParty" *ngIf="!partyId">
       <div class="appHeader-findPartSearchFieldContainer">
         <form
-          (submit)="findParty();">
+          (submit)="findParty($event);">
           <input
             #searchParty
             class="appHeader-findPartySearchField"
             placeholder="Type your party id..."/>
-          <button class="appHeader-findPartyButton" (click)="findParty()">
+          <button type="button" class="appHeader-findPartyButton" (click)="findParty($event)">
             <fa name="search"></fa>
           </button>
         </form>
