@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {IParty} from '../interfaces/party.interface';
+import {IParty} from '../../interfaces/party.interface';
 
 @Injectable()
 export class ApiService {
