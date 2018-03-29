@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import {AppComponent} from './app.component';
@@ -13,6 +14,12 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {SetSecondaryBarMessageService} from './services/set-secondary-bar-message/set-secondary-bar-message.service';
 import { SecondaryBarComponent } from './components/secondary-bar/secondary-bar.component';
+import { SweepstakeComponent } from './components/sweepstake/sweepstake.component';
+
+const appRoutes: Routes = [
+  { path: 'party/:id', component: SweepstakeComponent},
+  { path: '', component: SweepstakeComponent},
+];
 
 @NgModule({
   declarations: [
@@ -22,9 +29,14 @@ import { SecondaryBarComponent } from './components/secondary-bar/secondary-bar.
     NameComponent,
     AddNewNameComponent,
     CreateNewPartyComponent,
-    SecondaryBarComponent
+    SecondaryBarComponent,
+    SweepstakeComponent
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
     AngularFontAwesomeModule,
     BrowserModule,
     FormsModule,
