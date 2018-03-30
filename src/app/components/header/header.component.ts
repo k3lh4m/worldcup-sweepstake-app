@@ -1,4 +1,5 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation} from '@angular/core';
+import { Router } from '@angular/router';
 import {ApiService} from '../../services/api/api.service';
 import {IParty} from '../../interfaces/party.interface';
 import {SetSecondaryBarMessageService} from '../../services/set-secondary-bar-message/set-secondary-bar-message.service';
@@ -24,11 +25,13 @@ export class HeaderComponent implements OnInit{
   private apiService: ApiService;
   private setSecondaryBarMessage: SetSecondaryBarMessageService;
   private dataService: DataService;
+  private router: Router;
 
-  constructor(apiService: ApiService, setSecondaryBar: SetSecondaryBarMessageService, dataService: DataService) {
+  constructor(apiService: ApiService, setSecondaryBar: SetSecondaryBarMessageService, dataService: DataService, router: Router) {
     this.apiService = apiService;
     this.setSecondaryBarMessage = setSecondaryBar;
     this.dataService = dataService;
+    this.router = router;
   }
 
   public ngOnInit(): void {
@@ -50,6 +53,7 @@ export class HeaderComponent implements OnInit{
         result => {
           this.appHeaderPartyData.emit(result);
           this.partyId = result.partyId;
+          this.router.navigate(['/party/' + findPartyId]);
         },
         error => {
           this.setSecondaryBarMessage.setMessage(error.error);
