@@ -20,11 +20,6 @@ export class AppComponent implements OnInit {
     this.getRetrievePartyDataFromParamsLink();
   }
 
-  public setRetrievedPartyData(data: IParty) {
-    this.partyData = data;
-    this.dataService.sendData(this.partyData);
-  }
-
   private getRetrievePartyDataFromParamsLink(): void {
     this.dataService.getData().subscribe((data: IParty) => {
       this.partyData = data;

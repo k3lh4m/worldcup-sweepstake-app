@@ -16,9 +16,6 @@ export class HeaderComponent implements OnInit{
   @Input()
   appHeaderAppTitle: string;
 
-  @Output()
-  appHeaderPartyData: EventEmitter<any> = new EventEmitter<any>();
-
   @ViewChild('searchParty') input: ElementRef;
 
   public partyId: number;
@@ -51,8 +48,6 @@ export class HeaderComponent implements OnInit{
     this.apiService.findParty('/api/party', findPartyId)
       .subscribe(
         result => {
-          this.appHeaderPartyData.emit(result);
-          this.partyId = result.partyId;
           this.router.navigate(['/party/' + findPartyId]);
         },
         error => {
