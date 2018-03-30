@@ -38,8 +38,9 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  public setPartyId(party: IParty): void {
-    this.partyId = party.partyId;
+  public goHome(): void {
+    this.dataService.clearData();
+    this.router.navigate(['/']);
   }
 
   public findParty(event: Event): void {

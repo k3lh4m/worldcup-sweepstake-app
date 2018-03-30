@@ -1,0 +1,17 @@
+@import "../../../styles";
+
+.appCreatyNewParty {
+  &-container {
+
+  }
+
+  &-button {
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+
+    @include defaultButton {
+      background-color: $color-mustard-yellow;
+      border: none;
+    }
+  }
+}

@@ -1,28 +1,30 @@
 <div class="appHeader-container">
   <div class="appHeader-logoContainer">
-    <h1 class="appHeader-logo">{{ appHeaderAppTitle }}</h1>
+    <h1 class="appHeader-logo">
+      <a (click)="goHome()">{{ appHeaderAppTitle }}</a>
+    </h1>
   </div>
 
   <div class="appHeader-loginInfo">
     <div class="appHeader-createNewPartyButton" *ngIf="!partyId">
-      <app-create-new-party
-        (appCreateNewPartyPartyId)="setPartyId($event)">
-      </app-create-new-party>
+      <app-create-new-party></app-create-new-party>
     </div>
 
     <div class="appHeader-findParty" *ngIf="!partyId">
-      <div class="appHeader-findPartSearchFieldContainer">
-        <form
-          (submit)="findParty($event);">
+      <form (submit)="findParty($event);">
+        <div class="appHeader-inputGroup">
           <input
             #searchParty
-            class="appHeader-findPartySearchField"
+            type="text"
+            class="appHeader-formControl"
             placeholder="Type your party id..."/>
-          <button type="button" class="appHeader-findPartyButton" (click)="findParty($event)">
-            <fa name="search"></fa>
-          </button>
-        </form>
-      </div>
+          <div class="appHeader-inputGroupButtonContainer">
+            <button type="button" class="appHeader-findPartyButton" (click)="findParty($event)">
+              <fa name="search"></fa>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
 
     <div class="appHeader-partyNumber" *ngIf="partyId">

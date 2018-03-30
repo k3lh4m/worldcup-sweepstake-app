@@ -12,7 +12,9 @@ export class DataService {
   }
 
   public clearData() {
-    this.subject.next();
+    this.subject.next({
+      partyId: null
+    });
   }
 
   public getData(): Observable<any> {
