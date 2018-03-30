@@ -1,4 +1,13 @@
-<app-header
-  [appHeaderAppTitle]="appTitle"
-  (appHeaderPartyData)="setRetrievedPartyData($event)">
-</app-header>
+<div class="app-container">
+  <app-header
+    class="app-header appHeader"
+    [appHeaderAppTitle]="appTitle"
+    (appHeaderPartyData)="setRetrievedPartyData($event)">
+  </app-header>
+  <app-secondary-bar
+    class="app-secondaryBar appSecondaryBar">
+  </app-secondary-bar>
+
+  <router-outlet></router-outlet>
+</div>
+

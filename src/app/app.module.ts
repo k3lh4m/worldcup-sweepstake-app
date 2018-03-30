@@ -15,6 +15,7 @@ import {FormsModule} from '@angular/forms';
 import {SetSecondaryBarMessageService} from './services/set-secondary-bar-message/set-secondary-bar-message.service';
 import { SecondaryBarComponent } from './components/secondary-bar/secondary-bar.component';
 import { SweepstakeComponent } from './components/sweepstake/sweepstake.component';
+import {DataService} from './services/data-service/data.service';
 
 const appRoutes: Routes = [
   { path: 'party/:id', component: SweepstakeComponent},
@@ -34,8 +35,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes
     ),
     AngularFontAwesomeModule,
     BrowserModule,
@@ -44,6 +44,7 @@ const appRoutes: Routes = [
   ],
   providers: [,
     ApiService,
+    DataService,
     SetSecondaryBarMessageService
   ],
   bootstrap: [AppComponent]
