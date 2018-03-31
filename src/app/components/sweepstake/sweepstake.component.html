@@ -1,0 +1,9 @@
+<div class="appSweepstake">
+  <div class="appSweepstake-container">
+    <app-group-names
+      *ngIf="partyData"
+      class="appSweepstake-participants appParticipantNames"
+      [appGroupNamesParticipants]="partyData.participants"
+    ></app-group-names>
+  </div>
+</div>
