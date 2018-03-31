@@ -1,0 +1,14 @@
+<div class="appGroupName-container">
+  <h3 class="appGroupName-title">Participants</h3>
+  <ul class="appGroupName-listOfParticipants">
+    <li
+      *ngFor="let participant of appGroupNamesParticipants"
+      class="appGroupName-participant">
+      {{participant.name}}
+    </li>
+  </ul>
+
+  <app-add-new-name
+    class="appGroupName-addName appAddNewName"></app-add-new-name>
+</div>
+

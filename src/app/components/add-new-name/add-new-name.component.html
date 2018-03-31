@@ -1,0 +1,23 @@
+<div class="appAddNewName-container">
+  <div class="appAddNewName-addNewNameForm" *ngIf="showForm">
+    <form (submit)="addNameToParty()">
+      <div class="appAddNewName-inputGroup">
+        <input
+          #addNewName
+          type="text"
+          class="appAddNewName-formControl"
+          placeholder="Name..."/>
+        <div class="appAddNewName-inputGroupButtonContainer">
+          <button type="button" class="appAddNewName-findPartyButton" (click)="addNameToParty($event)">
+            <span><fa name="plus"></fa></span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="appAddNewName-buttonContainer" [ngStyle]="{ 'margin-top': showForm ? '10px' : '0px' }">
+    <button class="appAddNewName-clearName" *ngIf="showForm" (click)="showNameForm()">Cancel</button>
+    <button class="appAddNewName-addName" (click)="showNameForm()" *ngIf="!showForm">Add Name</button>
+  </div>
+</div>

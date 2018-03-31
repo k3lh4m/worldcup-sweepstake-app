@@ -1,0 +1,59 @@
+@import '../../../styles';
+
+.appAddNewName {
+  &-container {
+  }
+
+  &-buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &-clearName {
+    @include defaultButton {
+      background-color: $color-pastel-red;
+      color: $color-white;
+    }
+  }
+
+  &-addName {
+    @include defaultButton {
+      background-color: $color-success-green;
+      color: $color-white;
+    }
+  }
+
+  &-findParty {
+    display: flex
+  }
+
+  &-inputGroup{
+    @include defaultInputConatiner
+  }
+
+  &-formControl {
+    @include defaultInput;
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 1%;
+    border: 1px solid $color-light-grey;
+    margin-bottom: 0;
+    padding: .375rem .75rem;
+    border-radius: 0.25rem;
+  }
+
+  &-inputGroupButtonContainer {
+    display: flex;
+    margin-left: -2px;
+    z-index: 2;
+  }
+
+  &-findPartyButton {
+    @include defaultButton;
+    background-color: $color-mustard-yellow;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
