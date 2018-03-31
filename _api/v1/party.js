@@ -62,12 +62,29 @@ router.get('/party', (req, res) => {
 
   result
     .then((party) => {
-      if(!party) {
-        res.send(404, { error: 'No party with this ID has been found' })
+      if (!party) {
+        res.send(404, {error: 'No party with this ID has been found'})
       }
 
       res.send(party);
     })
+});
+
+router.put('/party/:id/participants', (req, res) => {
+  const _id = req.params.id;
+
+  const result = Party.update(
+    {partyId: _id},
+    {
+      $push:
+        {
+          participants: req.body
+        },
+    });
+
+  result.then((data) => {
+    res.send(data)
+  })
 });
 
 

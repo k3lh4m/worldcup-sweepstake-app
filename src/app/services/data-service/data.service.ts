@@ -17,6 +17,8 @@ export class DataService {
     });
   }
 
+
+
   public getData(): Observable<any> {
     return this.subject.asObservable();
   }
