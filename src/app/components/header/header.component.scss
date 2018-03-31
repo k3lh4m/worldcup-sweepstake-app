@@ -29,6 +29,7 @@
     a {
       color: inherit;
       text-decoration: none;
+      cursor: pointer;
     }
   }
 
@@ -45,11 +46,7 @@
   }
 
   &-inputGroup{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap; // For form validation feedback
-    align-items: stretch;
-    width: 100%;
+    @include defaultInputConatiner
   }
 
   &-formControl {
