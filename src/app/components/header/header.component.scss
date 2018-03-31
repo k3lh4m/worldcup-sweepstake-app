@@ -79,10 +79,24 @@
   }
 
   &-partyNumber {
+
+  }
+
+  &-partyNumberLabel {
     @include defaultButton {
-      background-color: $color-jet-black;
-      border: $color-jet-black;
-      @include setBorderAndBackgroundColor($color-jet-black);
+      @include setBorderAndBackgroundColor($color-mustard-yellow);
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &-partyNumberId {
+    @include defaultButton {
+      @include setBorderAndBackgroundColor($color-white);
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      color: $color-jet-black;
+      margin-left: -5px;
     }
   }
 }
