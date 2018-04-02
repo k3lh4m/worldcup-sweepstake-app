@@ -1,9 +1,9 @@
-interface ICountriesAllocated {
+export interface ICountriesAllocated {
   country: string;
   countryFlag: string;
 }
 
-interface IParticipant {
+export interface IParticipant {
   name: string;
   teamsAllocated: number;
   countriesAllocated: {
@@ -12,7 +12,7 @@ interface IParticipant {
 }
 
 export interface IParty {
-  _id: number;
+  id: number;
   partyId: number;
   dateCreated: string;
   totalParticipants: number;
