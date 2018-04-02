@@ -1,0 +1,24 @@
+@import "../../../styles";
+
+.appSecondaryBar {
+  &-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding: 15px 0;
+    background-color: $color-pastel-red;
+    color: $color-white;
+  }
+
+  &-message {
+    font-size: $body-font
+  }
+
+  &-hideMessageBar {
+    position: absolute;
+    font-size: 25px;
+    top: 50%;
+    right: 15px;
+    transform: translate(0, -50%);
+  }
+}
