@@ -1,5 +1,9 @@
 <div class="appGroupName-container">
-  <h3 class="appGroupName-title">Participants</h3>
+  <div class="appGroupName-titleContainer">
+    <h3 class="appGroupName-title">Participants</h3>
+
+    <span class="appGroupName-numberOfParticpants">{{ appGroupNamesNumberParticipants }} / 32</span>
+  </div>
   <ul class="appGroupName-listOfParticipants">
     <li
       *ngFor="let participant of appGroupNamesParticipants"
@@ -9,6 +13,7 @@
   </ul>
 
   <app-add-new-name
+    *ngIf="canAddNewName()"
     class="appGroupName-addName appAddNewName"></app-add-new-name>
 </div>
 

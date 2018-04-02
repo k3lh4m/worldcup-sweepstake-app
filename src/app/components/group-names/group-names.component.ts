@@ -10,10 +10,16 @@ export class GroupNamesComponent implements OnInit {
   @Input()
   appGroupNamesParticipants;
 
+  @Input()
+  appGroupNamesNumberParticipants: number;
+
   constructor() { }
 
   ngOnInit() {
+  }
 
+  public canAddNewName(): boolean {
+    return this.appGroupNamesNumberParticipants <= 31;
   }
 
 }
