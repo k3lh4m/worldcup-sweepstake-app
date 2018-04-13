@@ -1,0 +1,9 @@
+<div class="appName-container" (mouseenter)="showButton()" (mouseleave)="showButton()">
+  <span class="appName-participantName">{{appNameName}}</span>
+
+  <button
+    *ngIf="showClearButton"
+    (click)="clear()" class="appName-clearParticipant">
+      <fa name="times"></fa>
+  </button>
+</div>

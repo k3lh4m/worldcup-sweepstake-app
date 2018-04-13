@@ -1,0 +1,15 @@
+@import "../../../styles";
+
+.appCompleteParty {
+  &-container {
+    background-color: $color-white;
+    border-radius: 5px;
+  }
+
+  &-completeParty {
+    @include defaultButton {
+      background-color: $color-success-green;
+      color: $color-white;
+    }
+  }
+}

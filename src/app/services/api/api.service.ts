@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {IParty} from '../../interfaces/party.interface';
-import {share} from 'rxjs/operator/share';
 
 @Injectable()
 export class ApiService {
@@ -19,6 +18,14 @@ export class ApiService {
 
   public findParty(url: string, partyId: number): Observable<IParty> {
     return this._http.get<IParty>(url + '?partyId=' + partyId);
+  }
+
+  public partyCompleted(url, condition) {
+    return this._http.put(url, { partyComplete: condition }, this._httpHeaders);
+  }
+
+  public removeParticipant(url) {
+    return this._http.delete(url);
   }
 
   public addParticipant(url: string, body: any) {

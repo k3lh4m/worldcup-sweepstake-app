@@ -1,10 +1,17 @@
 <div class="appSweepstake">
   <div class="appSweepstake-container">
     <app-group-names
-      *ngIf="partyData"
+      *ngIf="appSweepstakePartyData.participants"
       class="appSweepstake-participants appParticipantNames"
-      [appGroupNamesParticipants]="partyData.participants"
-      [appGroupNamesNumberParticipants]="partyData.totalParticipants"
+      [appGroupNamesParticipants]="appSweepstakePartyData.participants"
+      [appGroupNamesNumberParticipants]="appSweepstakePartyData.totalParticipants"
+      [appGroupNamesIsComplete]="appSweepstakePartyData.isCompleted"
     ></app-group-names>
+
+    <app-party-selected-info
+      *ngIf="appSweepstakePartyData.isCompleted"
+      [appPartySelectedIsCompleted]="appSweepstakePartyData.isCompleted"
+      class="appSweepstake-partyIsSelected appPartyIsSelected">
+    </app-party-selected-info>
   </div>
 </div>

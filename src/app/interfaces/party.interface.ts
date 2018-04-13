@@ -13,6 +13,7 @@ export interface IParticipant {
 
 export interface IParty {
   id: number;
+  isCompleted: boolean;
   partyId: number;
   dateCreated: string;
   totalParticipants: number;

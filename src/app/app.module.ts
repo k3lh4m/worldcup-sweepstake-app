@@ -16,10 +16,13 @@ import {SetSecondaryBarMessageService} from './services/set-secondary-bar-messag
 import { SecondaryBarComponent } from './components/secondary-bar/secondary-bar.component';
 import { SweepstakeComponent } from './components/sweepstake/sweepstake.component';
 import {DataService} from './services/data-service/data.service';
+import { PartySelectedInfoComponent } from './components/party-selected-info/party-selected-info.component';
+import { CompletePartyComponent } from './components/complete-party/complete-party.component';
+import { SweepstakeWrapperComponent } from './components/sweepstake-wrapper/sweepstake-wrapper.component';
 
 const appRoutes: Routes = [
-  { path: 'party/:id', component: SweepstakeComponent},
-  { path: '', component: SweepstakeComponent},
+  { path: 'party/:id', component: SweepstakeWrapperComponent},
+  { path: '', component: SweepstakeWrapperComponent},
 ];
 
 @NgModule({
@@ -31,7 +34,10 @@ const appRoutes: Routes = [
     AddNewNameComponent,
     CreateNewPartyComponent,
     SecondaryBarComponent,
-    SweepstakeComponent
+    SweepstakeComponent,
+    PartySelectedInfoComponent,
+    CompletePartyComponent,
+    SweepstakeWrapperComponent
   ],
   imports: [
     RouterModule.forRoot(

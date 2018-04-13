@@ -1,6 +1,6 @@
-import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, ElementRef, ViewChild, ViewEncapsulation} from '@angular/core';
 import {ApiService} from '../../services/api/api.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Params} from '@angular/router';
 import {DataService} from '../../services/data-service/data.service';
 
 @Component({
@@ -9,23 +9,20 @@ import {DataService} from '../../services/data-service/data.service';
   styleUrls: ['./add-new-name.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AddNewNameComponent implements OnInit {
+export class AddNewNameComponent {
   @ViewChild('addNewName') input: ElementRef;
 
   public showForm: boolean;
   private apiService: ApiService;
-  private router: ActivatedRoute;
-  private link: string;
   private dataService: DataService;
   private paramsId: number;
+  private router: ActivatedRoute;
+  private apiLink: string;
 
   constructor(apiService: ApiService, router: ActivatedRoute, dataService: DataService) {
     this.apiService = apiService;
     this.dataService = dataService;
     this.router = router;
-  }
-
-  ngOnInit() {
   }
 
   public showNameForm(): void {
@@ -36,21 +33,19 @@ export class AddNewNameComponent implements OnInit {
     const routerParams = this.router.params;
     const nameToBeAdded = this.input.nativeElement.value;
 
-    routerParams.subscribe((params) => {
+    routerParams.subscribe((params: Params) => {
       this.paramsId = params.id;
-      this.link = '/api/party/' + this.paramsId + '/participants';
+      this.apiLink = '/api/party/' + this.paramsId + '/participants';
     });
 
-    this.apiService.addParticipant(this.link, { name: nameToBeAdded })
+    const requestPayload = {
+      name: nameToBeAdded,
+    };
+
+    this.apiService.addParticipant(this.apiLink, requestPayload)
       .subscribe(() => {
-        this.getUpdatedData();
+        this.dataService.refreshData();
         this.input.nativeElement.value = '';
       });
-  }
-
-  private getUpdatedData(): void {
-    this.apiService.findParty('/api/party', this.paramsId).subscribe((partyData) => {
-      this.dataService.sendData(partyData);
-    });
   }
 }

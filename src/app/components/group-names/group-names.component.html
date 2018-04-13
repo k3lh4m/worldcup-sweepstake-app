@@ -1,19 +1,29 @@
 <div class="appGroupName-container">
   <div class="appGroupName-titleContainer">
-    <h3 class="appGroupName-title">Participants</h3>
+    <h3 class="appGroupName-title">Participants <span class="appGroupName-numberOfParticpants">{{ appGroupNamesNumberParticipants }} / 32</span></h3>
 
-    <span class="appGroupName-numberOfParticpants">{{ appGroupNamesNumberParticipants }} / 32</span>
+    <app-complete-party
+      *ngIf="minimumParticipants()"
+      [appCompletePartyConfig]="completeButtonConfig"
+      class="appGroupName-completeParty appCompleteParty">
+    </app-complete-party>
   </div>
   <ul class="appGroupName-listOfParticipants">
     <li
       *ngFor="let participant of appGroupNamesParticipants"
       class="appGroupName-participant">
-      {{participant.name}}
+      <app-name
+        [appNameName]="participant.name"
+        [appNameId]="participant._id"
+        [appNameIsEditable]="appGroupNamesIsComplete">
+      </app-name>
     </li>
   </ul>
 
-  <app-add-new-name
-    *ngIf="canAddNewName()"
-    class="appGroupName-addName appAddNewName"></app-add-new-name>
+  <div class="appGroupName-buttonsContainer">
+    <app-add-new-name
+      *ngIf="canAddNewName()"
+      class="appGroupName-addName appAddNewName"></app-add-new-name>
+  </div>
 </div>
 

@@ -15,7 +15,12 @@ const partySchema = new mongoose.Schema({
   },
   dateCreated: Date,
   totalParticipants: Number,
+  finishedAddingName: {
+    type: Boolean,
+    default: false
+  },
   participants: [{
+    id: Number,
     name: String,
     numberOfTeams: Number,
     teamsAllocated: [{
@@ -36,6 +41,7 @@ function createNewParty(partyId) {
     partyId: partyId,
     dateCreated: new Date(),
     totalParticipants: 0,
+    finishedAddingName: false
   });
 
   const result = party.save();
@@ -70,6 +76,28 @@ router.get('/party', (req, res) => {
     })
 });
 
+//When the party has enough name you can set the complete party to true
+router.put('/party/:id', (req, res) => {
+  const params = {
+    id: req.params.id,
+    isCompleted: req.query.completedParty
+  };
+
+  const result = Party.update(
+    {partyId: params.id},
+    {
+      $set: {
+        finishedAddingName: params.isCompleted
+      }
+    }
+  );
+
+  result.then((data) => {
+    res.send(data)
+  })
+});
+
+// Add Participant to party
 router.put('/party/:id/participants', (req, res) => {
   const _id = req.params.id;
 
@@ -86,6 +114,31 @@ router.put('/party/:id/participants', (req, res) => {
     res.send(data)
   })
 });
+
+//Remove participant from party
+router.delete('/party/:id/participants/:participantId', (req, res) => {
+  const params = {
+    id: req.params.id,
+    participantId: req.params.participantId
+  };
+
+  const result = Party.update(
+    {partyId: params.id},
+    {
+      $pull:
+        {
+          participants: {
+            _id: params.participantId
+          }
+        },
+    })
+  ;
+
+  result.then((data) => {
+    res.send(data)
+  })
+})
+;
 
 
 module.exports = router;
