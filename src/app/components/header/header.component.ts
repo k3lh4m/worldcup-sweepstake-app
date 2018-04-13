@@ -2,10 +2,9 @@ import {Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation} from
 import {Router} from '@angular/router';
 
 import {ApiService} from '../../services/api/api.service';
+import {IHeader} from './header.component.interface';
 import {SetSecondaryBarMessageService} from '../../services/set-secondary-bar-message/set-secondary-bar-message.service';
 import {DataService} from '../../services/data-service/data.service';
-import {IParty} from '../../interfaces/party.interface';
-import 'rxjs/add/operator/share';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +12,7 @@ import 'rxjs/add/operator/share';
   styleUrls: ['./header.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements IHeader, OnInit {
   @Input()
   appHeaderAppTitle: string;
 

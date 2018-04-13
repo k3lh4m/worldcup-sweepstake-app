@@ -8,16 +8,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./create-new-party.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class CreateNewPartyComponent implements OnInit {
+export class CreateNewPartyComponent {
   private apiService: ApiService;
   private router: Router;
 
   constructor(apiService: ApiService, router: Router) {
     this.apiService = apiService;
     this.router = router;
-  }
-
-  ngOnInit() {
   }
 
   public createNewParty(): void {
