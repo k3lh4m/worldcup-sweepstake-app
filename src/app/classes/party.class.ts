@@ -8,6 +8,7 @@ export class Party {
     [key: string]: IParticipant
   };
   totalParticipants: number;
+  isCompleted: boolean;
 
   constructor(partyData) {
     this.id = partyData._id;
@@ -15,5 +16,6 @@ export class Party {
     this.dateCreated = partyData.dateCreated;
     this.participants = partyData.participants;
     this.totalParticipants = partyData.participants.length;
+    this.isCompleted = partyData.finishedAddingName;
   }
 }
