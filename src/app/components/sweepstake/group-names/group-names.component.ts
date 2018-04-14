@@ -1,10 +1,10 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {ApiService} from '../../services/api/api.service';
 import {ActivatedRoute} from '@angular/router';
-import {IParticipant} from '../../interfaces/party.interface';
-import {DataService} from '../../services/data-service/data.service';
 import {IGroupNames} from './group-names.component.interface';
-import {ICompletePartyConfigButton} from '../complete-party/_interfaces/complete-party-button-config.interface';
+import {IParticipant} from '../../../interfaces/party.interface';
+import {ICompletePartyConfigButton} from '../../complete-party/_interfaces/complete-party-button-config.interface';
+import {ApiService} from '../../../services/api/api.service';
+import {DataService} from '../../../services/data-service/data.service';
 
 @Component({
   selector: 'app-group-names',
