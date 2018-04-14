@@ -3,7 +3,7 @@
 .appSweepstake {
   &-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: 100%;
     align-items: flex-start;
     align-self: stretch;
@@ -11,10 +11,12 @@
   }
 
   &-participants {
-    width: 50%;
+    width: 33%;
+    margin: 0 5px;
   }
 
   &-partyIsSelected {
-    width: 50%;
+    width: 33%;
+    margin: 0 5px;
   }
 }
