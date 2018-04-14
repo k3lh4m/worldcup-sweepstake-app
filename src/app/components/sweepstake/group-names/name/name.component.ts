@@ -1,7 +1,7 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
-import {ApiService} from '../../../services/api/api.service';
+import {ApiService} from '../../../../services/api/api.service';
 import {ActivatedRoute} from '@angular/router';
-import {DataService} from '../../../services/data-service/data.service';
+import {DataService} from '../../../../services/data-service/data.service';
 import {IName} from './name.component.interface';
 
 @Component({

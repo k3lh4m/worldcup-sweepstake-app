@@ -1,4 +1,4 @@
-import {IParticipant} from '../../interfaces/party.interface';
+import {IParticipant} from '../../../interfaces/party.interface';
 
 export interface IGroupNames {
   appGroupNamesParticipants: IParticipant;

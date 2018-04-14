@@ -1,10 +1,10 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {ApiService} from '../../services/api/api.service';
-import {DataService} from '../../services/data-service/data.service';
+import {ApiService} from '../../../services/api/api.service';
+import {DataService} from '../../../services/data-service/data.service';
 import {ActivatedRoute} from '@angular/router';
 import {IPartyCompleted} from './party-selected-info.component.interface';
-import {ICompletePartyConfigButton} from '../complete-party/_interfaces/complete-party-button-config.interface';
-import {sweepstakeSetting} from '../../constants/sweepstake-settings.constant';
+import {ICompletePartyConfigButton} from '../../complete-party/_interfaces/complete-party-button-config.interface';
+import {sweepstakeSetting} from '../../../constants/sweepstake-settings.constant';
 
 @Component({
   selector: 'app-party-selected-info',
