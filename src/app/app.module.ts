@@ -19,6 +19,7 @@ import {DataService} from './services/data-service/data.service';
 import { PartySelectedInfoComponent } from './components/party-selected-info/party-selected-info.component';
 import { CompletePartyComponent } from './components/complete-party/complete-party.component';
 import { SweepstakeWrapperComponent } from './components/sweepstake-wrapper/sweepstake-wrapper.component';
+import { PartyDataComponent } from './components/party-selected-info/party-data/party-data.component';
 
 const appRoutes: Routes = [
   { path: 'party/:id', component: SweepstakeWrapperComponent},
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     SweepstakeComponent,
     PartySelectedInfoComponent,
     CompletePartyComponent,
-    SweepstakeWrapperComponent
+    SweepstakeWrapperComponent,
+    PartyDataComponent
   ],
   imports: [
     RouterModule.forRoot(

@@ -1,9 +1,5 @@
-export interface ICompletePartyButton {
-  label: string;
-  isCompleted: boolean;
-  action: void;
-}
+import {ICompletePartyConfigButton} from './_interfaces/complete-party-button-config.interface';
 
 export interface ICompleteParty {
-  appCompletePartyConfig: ICompletePartyButton;
+  appCompletePartyConfig: ICompletePartyConfigButton;
 }

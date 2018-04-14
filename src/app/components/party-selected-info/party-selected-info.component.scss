@@ -14,5 +14,27 @@
     align-items: center;
     text-transform: uppercase;
     font-weight: $font-weight-black;
+    position: relative;
+  }
+
+  &-editParty {
+    position: absolute;
+    right: 20px;
+  }
+
+  &-partyInformation {
+    display: block;
+  }
+
+  &-partyData {
+    display: flex;
+    border-bottom: 1px solid #CFDBD5;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 }

@@ -1,0 +1,25 @@
+@import "../../../../styles";
+
+.appPartyData {
+  &-container {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  &-partyDataSet {
+    display: flex;
+    flex: inherit;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+
+  &-key {
+
+  }
+
+  &-value {
+
+  }
+}

@@ -3,6 +3,17 @@
     <h3 class="appPartyIsSelected-title">Party Information</h3>
 
     <app-complete-party
-    [appCompletePartyConfig]="completeButtonConfig"></app-complete-party>
+      class="appPartyIsSelected-editParty"
+      [appCompletePartyConfig]="completeButtonConfig"
+    ></app-complete-party>
+  </div>
+
+  <div class="appPartyIsSelected-partyInformation">
+    <app-party-data
+      *ngFor="let data of sweepStakeInformationData"
+      class="appPartyIsSelected-partyData appPartyData"
+      [appPartyDataKey]="data.label"
+      [appPartyDataValue]="data.value"
+    ></app-party-data>
   </div>
 </div>
