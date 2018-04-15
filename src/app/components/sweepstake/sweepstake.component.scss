@@ -10,12 +10,9 @@
     padding: 10px 20px
   }
 
-  &-participants {
-    width: 33%;
-    margin: 0 5px;
-  }
-
-  &-partyIsSelected {
+  &-participants,
+  &-partyIsSelected,
+  &-selectParticpantTeams {
     width: 33%;
     margin: 0 5px;
   }

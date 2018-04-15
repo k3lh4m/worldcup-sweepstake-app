@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {ApiService} from '../../../services/api/api.service';
 import {DataService} from '../../../services/data-service/data.service';
 import {ActivatedRoute} from '@angular/router';
@@ -19,7 +19,13 @@ export class PartySelectedInfoComponent implements IPartyCompleted, OnInit {
   @Input()
   public appPartySelectedTotalParticpants: number;
 
+  @Output()
+  public appPartySelectedNextStageTriggered: EventEmitter<any> = new EventEmitter<void>();
+
   public completeButtonConfig: ICompletePartyConfigButton;
+  public nextStageButtonConfig: {
+    label: string;
+  };
   public sweepStakeInformationData = [];
   private apiService: ApiService;
   private router: ActivatedRoute;
@@ -34,7 +40,12 @@ export class PartySelectedInfoComponent implements IPartyCompleted, OnInit {
 
   public ngOnInit() {
     this.setCompletePartyButtonConfig();
+    this.setNextStageButtonConfig();
     this.setSweepStakeData();
+  }
+
+  public emitToParent(): void {
+    this.appPartySelectedNextStageTriggered.emit();
   }
 
   private setCompletePartyButtonConfig(): void {
@@ -78,5 +89,11 @@ export class PartySelectedInfoComponent implements IPartyCompleted, OnInit {
   private setSweepStakeData(): void {
     this.sweepStakeInformationData.push(this.getTeamsPerParticpant());
     this.sweepStakeInformationData.push(this.getTeamsLeftOver());
+  }
+
+  private setNextStageButtonConfig() {
+    this.nextStageButtonConfig = {
+      label: 'Shuffle and draw teams',
+    };
   }
 }

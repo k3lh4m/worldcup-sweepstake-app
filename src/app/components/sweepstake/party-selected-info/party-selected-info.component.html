@@ -17,3 +17,8 @@
     ></app-party-data>
   </div>
 </div>
+
+<app-full-width-button
+  class="appPartyIsSelected-nextStage"
+  [appFullWidthButtonConfig]="nextStageButtonConfig"
+  (appFullWidthButtonTriggered)="emitToParent($event)"></app-full-width-button>

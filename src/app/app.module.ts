@@ -21,6 +21,9 @@ import { CompletePartyComponent } from './components/complete-party/complete-par
 import { SweepstakeWrapperComponent } from './components/sweepstake-wrapper/sweepstake-wrapper.component';
 import { PartyDataComponent } from './components/sweepstake/party-selected-info/party-data/party-data.component';
 import { ParticipantTeamSelectionComponent } from './components/sweepstake/participant-team-selection/participant-team-selection.component';
+import { FullWidthButtonComponent } from './components/full-width-button/full-width-button.component';
+import { EditableNamesComponent } from './components/sweepstake/group-names/name/editable-names/editable-names.component';
+import { OrderedNamesComponent } from './components/sweepstake/group-names/name/ordered-names/ordered-names.component';
 
 const appRoutes: Routes = [
   { path: 'party/:id', component: SweepstakeWrapperComponent},
@@ -41,7 +44,10 @@ const appRoutes: Routes = [
     CompletePartyComponent,
     SweepstakeWrapperComponent,
     PartyDataComponent,
-    ParticipantTeamSelectionComponent
+    ParticipantTeamSelectionComponent,
+    FullWidthButtonComponent,
+    EditableNamesComponent,
+    OrderedNamesComponent
   ],
   imports: [
     RouterModule.forRoot(

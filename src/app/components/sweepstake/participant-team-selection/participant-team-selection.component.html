@@ -1,3 +1,15 @@
-<p>
-  participant-team-selection works!
-</p>
+<div class="appParticipantTeamSelection-container">
+  <div class="appParticipantTeamSelection-titleContainer">
+    <h3 class="appParticipantTeamSelection-title">Particpant Team Select</h3>
+  </div>
+  <ol>
+    <li
+      *ngFor="let participant of appParticipantTeamSelectionData"
+      class="appGroupName-participant">
+      <app-name
+        [appNameName]="participant.name"
+        [appNameId]="participant._id">
+      </app-name>
+    </li>
+  </ol>
+</div>

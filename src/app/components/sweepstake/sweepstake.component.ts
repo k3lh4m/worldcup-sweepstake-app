@@ -1,5 +1,6 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
-import {IParty} from '../../interfaces/party.interface';
+import {IParticipant, IParty} from '../../interfaces/party.interface';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-sweepstake',
@@ -10,4 +11,11 @@ import {IParty} from '../../interfaces/party.interface';
 export class SweepstakeComponent {
   @Input()
   public appSweepstakePartyData: IParty;
+
+  public shuffledParticpants: IParticipant;
+
+  public shuffleAndSelectTeams(): void {
+    const immutableArray = _.cloneDeep(this.appSweepstakePartyData.participants);
+    this.shuffledParticpants = _.shuffle(immutableArray);
+  }
 }

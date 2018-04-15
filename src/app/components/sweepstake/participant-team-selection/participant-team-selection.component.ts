@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {IParticipantTeamSelectionComponent} from './participant-team-selection.component.interface';
+import {IParticipant} from '../../../interfaces/party.interface';
 
 @Component({
   selector: 'app-participant-team-selection',
   templateUrl: './participant-team-selection.component.html',
   styleUrls: ['./participant-team-selection.component.scss']
 })
-export class ParticipantTeamSelectionComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class ParticipantTeamSelectionComponent implements IParticipantTeamSelectionComponent {
+  @Input()
+  public appParticipantTeamSelectionData: IParticipant;
 }

@@ -1,0 +1,19 @@
+@import "../../../../styles";
+
+.appParticipantTeamSelection {
+  &-container {
+    background-color: $color-white;
+    border-radius: 5px;
+    padding: 5px 0;
+  }
+
+  &-titleContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: $font-weight-black;
+    position: relative;
+  }
+}

@@ -12,7 +12,14 @@
       *ngIf="appSweepstakePartyData.isCompleted"
       [appPartySelectedIsCompleted]="appSweepstakePartyData.isCompleted"
       [appPartySelectedTotalParticpants]="appSweepstakePartyData.totalParticipants"
+      (appPartySelectedNextStageTriggered)="shuffleAndSelectTeams()"
       class="appSweepstake-partyIsSelected appPartyIsSelected">
     </app-party-selected-info>
+
+    <app-participant-team-selection
+      *ngIf="shuffledParticpants && appSweepstakePartyData.isCompleted"
+      class="appSweepstake-selectParticpantTeams appParticipantTeamSelection"
+      [appParticipantTeamSelectionData]="shuffledParticpants">
+    </app-participant-team-selection>
   </div>
 </div>
