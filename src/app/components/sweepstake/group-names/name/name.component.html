@@ -1,9 +1,13 @@
-<div class="appName-container" (mouseenter)="showButton()" (mouseleave)="showButton()">
-  <span class="appName-participantName">{{appNameName}}</span>
-
-  <button
-    *ngIf="showClearButton"
-    (click)="clear()" class="appName-clearParticipant">
-      <fa name="times"></fa>
-  </button>
+<div class="appName-container">
+  <app-editable-names
+    class="appName-editableNames appEditableNames"
+    *ngIf="appNameCanEdit"
+    [appEditableNamesId]="appNameId"
+    [appEditableNamesName]="appNameName"
+    [appEditableNamesIsEditable]="appNameIsEditable"></app-editable-names>
+  <app-ordered-names
+    class="appName-orderedNames appOrderedNames"
+    *ngIf="!appNameCanEdit"
+    [appOrderedNamesName]="appNameName">
+  </app-ordered-names>
 </div>

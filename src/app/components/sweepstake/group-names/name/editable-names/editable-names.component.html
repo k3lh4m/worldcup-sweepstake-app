@@ -1,0 +1,9 @@
+<div class="appEditableNames-container" (mouseenter)="showButton()" (mouseleave)="showButton()">
+  <span class="appEditableNames-participantName">{{appEditableNamesName}}</span>
+
+  <button
+    *ngIf="showClearButton"
+    (click)="clear()" class="appEditableNames-clearParticipant">
+    <fa name="times"></fa>
+  </button>
+</div>

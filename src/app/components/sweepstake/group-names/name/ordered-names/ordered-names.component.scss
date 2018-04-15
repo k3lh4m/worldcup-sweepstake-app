@@ -1,0 +1,24 @@
+@import "../../../../../../styles";
+
+.appOrderedNames {
+  &-container {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  &-participantName {
+    align-self: center;
+    padding: 10px 0;
+  }
+
+  &-clearParticipant {
+    @include defaultButton {
+      @include setBorderAndBackgroundColor($color-pastel-red);
+      color: $color-white;
+      padding: 5px;
+      line-height: 1;
+    }
+  }
+}

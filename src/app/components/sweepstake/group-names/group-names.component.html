@@ -1,6 +1,7 @@
 <div class="appGroupName-container">
   <div class="appGroupName-titleContainer">
-    <h3 class="appGroupName-title">Participants <span class="appGroupName-numberOfParticpants">{{ appGroupNamesNumberParticipants }} / 32</span></h3>
+    <h3 class="appGroupName-title">Participants <span class="appGroupName-numberOfParticpants">{{ appGroupNamesNumberParticipants }} / 32</span>
+    </h3>
 
     <app-complete-party
       *ngIf="minimumParticipants()"
@@ -15,7 +16,8 @@
       <app-name
         [appNameName]="participant.name"
         [appNameId]="participant._id"
-        [appNameIsEditable]="appGroupNamesIsComplete">
+        [appNameIsEditable]="appGroupNamesIsComplete"
+        [appNameCanEdit]="true">
       </app-name>
     </li>
   </ul>

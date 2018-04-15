@@ -24,6 +24,7 @@ import { ParticipantTeamSelectionComponent } from './components/sweepstake/parti
 import { FullWidthButtonComponent } from './components/full-width-button/full-width-button.component';
 import { EditableNamesComponent } from './components/sweepstake/group-names/name/editable-names/editable-names.component';
 import { OrderedNamesComponent } from './components/sweepstake/group-names/name/ordered-names/ordered-names.component';
+import { ShowNameComponent } from './components/sweepstake/group-names/name/show-name/show-name.component';
 
 const appRoutes: Routes = [
   { path: 'party/:id', component: SweepstakeWrapperComponent},
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     ParticipantTeamSelectionComponent,
     FullWidthButtonComponent,
     EditableNamesComponent,
-    OrderedNamesComponent
+    OrderedNamesComponent,
+    ShowNameComponent
   ],
   imports: [
     RouterModule.forRoot(
